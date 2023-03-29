@@ -125,7 +125,7 @@ public class DynamicInvokerService implements Plugin {
 
         }
         if(dynamicInvokerFilter.getHandlingTypes()!=null&&!dynamicInvokerFilter.getHandlingTypes().isEmpty()){
-            pred=pred&&dynamicInvokerFilter.getHandlingTypes().contains(f.getHandlingType().getCanonicalName());
+            pred=pred&&(f.getHandlingType()!=null&&dynamicInvokerFilter.getHandlingTypes().contains(f.getHandlingType().getCanonicalName()));
         }
         String handlingTypeLike = dynamicInvokerFilter.getHandlingTypeLike();
         if(handlingTypeLike !=null){
